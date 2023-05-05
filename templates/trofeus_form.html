@@ -1,0 +1,16 @@
+<form method='post'>
+{% csrf_token %}
+<div>
+<label>Nome</label>
+<input type='text' name='nome'  value="{{trofeu.nome}}" />
+</div>
+<div>
+<label>Data</label>
+<input type='date' name='data'  value="{{trofeu.data}}" />
+</div>
+<div>
+<label>Descrição</label>
+<textarea name ='descricao'/> {{trofeu.descricao}}  </textarea>
+</div>
+<input type='submit'/>
+</form>

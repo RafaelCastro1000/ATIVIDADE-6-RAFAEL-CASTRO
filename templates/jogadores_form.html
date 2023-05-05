@@ -1,0 +1,23 @@
+<form method='post'>
+{% csrf_token %}
+<div>
+<label>Nome</label>
+<input type='text' name='nome'  value="{{jogador.nome}}" />
+</div>
+<div>
+<label>Posição</label>
+<input type='text' name='posicao'  value="{{jogador.posicao}}"/>
+</div>
+<div>
+<label>Numero da camisa</label>
+<input type='text' name='numero_camisa'  value="{{jogador.numero_camisa}}"/>
+</div>
+<div>
+<label>Características</label>
+<textarea name ='caracteristicas'/>{{jogador.caracteristicas}}  </textarea> 
+<div>
+<label>Aprovação</label>
+<input type="checkbox" name="aprovação"  {% if jogador.aprovação == True %} checked {% endif %}>
+</div>
+<input type='submit'/>
+</form>

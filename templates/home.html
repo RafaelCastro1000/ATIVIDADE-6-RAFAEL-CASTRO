@@ -1,0 +1,47 @@
+{% load static %}
+
+
+<html>
+  <head>
+    <title>Rafael Ayres de Castro</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Fjalla+One&family=Lato:wght@700&display=swap" rel="stylesheet">
+    
+    
+  </head>
+  <body>
+    <h1>CLUBE DE REGATAS VASCO DA GAMA</h1>
+    <img src="https://static.dicionariodesimbolos.com.br/upload/60/81/conheca-o-significado-do-escudo-do-vasco-da-gama-5_xl.png" width="100">
+   
+    <p class="fonte-paragrafo">O clube de regatas Vasco da Gama foi fundado em 1898 na cidade do Rio de Janeiro por um grupo de remadores.<br> A caminhada do clube se iniciou no remo mais depois acabou se expandindo para várias outras modalidades tendo como carro-chefe o futebol.<br> O Vasco é um clube histórico e tradicional do Brasil pois apresenta feitos não apenas dentro das "4 linhas" mas também para o meio externo, como por exemplo a inclusão de negros pela primeira vez numa equipe de futebol. </p><br>
+    <p>. A caminhada do clube se iniciou no remo mais depois acabou se expandindo para várias outras modalidades tendo como carro-chefe o futebol.</p>
+
+ <h2> Troféus</h2>
+  <ul>
+    {% for trofeu in trofeus %}
+      <li>
+        {{ trofeu.nome }}
+        <a href="/trofeu/edit/{{trofeu.id}}"> Editar</a> 
+        <a href="/trofeu/delete/{{trofeu.id}}"> Remover</a> 
+      </li>
+    {% endfor %}
+  </ul>
+
+<h2> Jogadores </h2>
+  <ol>
+    {% for jogador in jogadores%}
+      <li>
+        {{ jogador.nome }}
+        <a href="/jogador/edit/{{jogador.id}}"> Editar</a> 
+        <a href="/jogador/delete/{{jogador.id}}"> Remover</a> 
+      </li>
+    {% endfor %}
+  </ol>
+
+    
+  </body>
+</html>
